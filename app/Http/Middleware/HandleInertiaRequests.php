@@ -50,6 +50,7 @@ final class HandleInertiaRequests extends Middleware
         return [
             ...parent::share($request),
             'appName' => config()->string('app.name'),
+            'workspaceId' => fn () => session('workspace_id'),
         ];
     }
 }
